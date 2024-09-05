@@ -24,6 +24,49 @@ def is_valid_name(name):
         return True
     return False
 
+def is_valid_email(email):
+    """
+    Description:
+        Validates the email which user have entered    
+    
+    parameters:
+         email: str the user entered mail
+    
+    return: 
+        bool
+    """
+
+
+    if re.fullmatch(r"^[\w]+([._@#$%^&*-][\w]+)*@[\w]+\.[a-zA-Z]{2,3}(\.[a-zA-Z]{2,3})?$",email):
+        return True
+    return False
+    
+def get_valid_email(phone_number):
+
+    """
+    Description:
+        Prompts the user for a valid mail and allows up to 5 attempts.
+    
+    parameters:
+        mail: str the user entered mail
+    
+    return: 
+        str or None
+    """
+    attempts = 5  
+    
+    while attempts > 0:
+        if is_valid_number(phone_number):
+            print("Valid mail entered!")
+            return phone_number
+        else:
+            attempts -= 1
+            print(f"Invalid mail. You have {attempts} attempt(s) left.")
+            email=input("ENter the mail : ")
+    
+    print("Sorry, you've exceeded the maximum number of attempts.")
+    return None
+
 def get_valid_name(name):
     
     """
@@ -49,73 +92,83 @@ def get_valid_name(name):
     
     print("Sorry, you've exceeded the maximum number of attempts.")
     return None
-def is_valid_email(email):
+
+
+
+def is_valid_number(phone_number):
     """
     Description:
-        Validates the email which user have entered    
+        Validates the phone_number which user have entered    
     
     parameters:
-         email: str the user entered mail
+         phone_number: str the user entered phone_number
     
     return: 
         bool
     """
 
 
-    if re.fullmatch(r"^[\w]+([._-][\w]+)*@[\w]+\.[a-zA-Z]{2,3}(\.[a-zA-Z]{2,3})?$",email):
+    if re.fullmatch(r"[0-9]{2}\s[0-9]{10}",phone_number):
         return True
     return False
 
-def get_valid_email(email):
 
+def get_valid_number(phone_number):
+    
     """
     Description:
-        Prompts the user for a valid mail and allows up to 5 attempts.
+        Prompts the user for a phone number and allows up to 5 attempts.
     
     parameters:
-        mail: str the user entered mail
+        phone_number: str the user entered phone number
     
     return: 
         str or None
     """
-    attempts = 5  
+    attempts = 5 
     
     while attempts > 0:
-        if is_valid_name(email):
-            print("Valid mail entered!")
-            return email
+        if is_valid_number(phone_number):
+            print("Valid last name entered!")
+            return phone_number
         else:
             attempts -= 1
-            print(f"Invalid mail. You have {attempts} attempt(s) left.")
-            email=input("ENter the mail : ")
+            print(f"Invalid phone number. You have {attempts} attempt(s) left.")
+            phone_number=input("Enter the number: ")
     
     print("Sorry, you've exceeded the maximum number of attempts.")
     return None
 
 def main():
 
-    first_name=input("Enter the first name:(Eg:Vij) ")
+    first_name=input("Enter the first name(Eg:Vij):")
     vaild_name=get_valid_name(first_name)
     
 
     if  vaild_name:
-        last_name=input("Enter the last name :(Eg: Kum)")
+        last_name=input("Enter the last name (Eg: Kum):")
         vaild_name=get_valid_name(last_name)
         if  vaild_name:
             
-            email=input("Enter the mail: (Eg: vijay@gmail.com)")
+            email=input("Enter the mail(Eg: vijay@gmail.com):")
             vaild_mail=is_valid_email(email)
             if  vaild_mail:
-                logger_init("UC_3").info(f"Valid details:")
+                phone_number=input("Enter the phone number(Eg:91 1234567890): ")
+                vaild_number=get_valid_number(phone_number)
+                if  vaild_number:
+                    logger_init("UC_4").info(f" valid details ")
+                else:
+                    logger_init("uc_4").warning(f("Invalid phone number entered:"))
+
             else:
-                logger_init("UC_3").warning(f"InValid mail entered:")
+                logger_init("UC_4").warning(f"InValid mail entered:")
 
 
 
         else:
-            logger_init("UC_3").warning(f"Invalid  last name entered")
+            logger_init("UC_4").warning(f"Invalid  last name entered:")
     else:
-        logger_init("UC_3").warning(f"Invalid first name entered")
+        logger_init("UC_3").warning(f"Invalid first name entered:")
 
 if __name__=="__main__":
     main()
