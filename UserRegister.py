@@ -36,7 +36,7 @@ def get_valid_name(name):
     return: 
         str or None
     """
-    attempts = 5  
+    attempts = 5 
     
     while attempts > 0:
         if is_valid_name(name):
