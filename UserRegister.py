@@ -43,13 +43,18 @@ def get_valid_first_name(name):
     return None
 def main():
 
-    first_name=input("Enter the name: ")
+    first_name=input("Enter the first name: ")
     vaild_name=get_valid_first_name(first_name)
 
     if  vaild_name:
-        logger_init("UC_1").info(f"Valid name entered: {vaild_name}")
+        last_name=input("Enter the last name :")
+        vaild_name=get_valid_first_name(last_name)
+        if  vaild_name:
+            logger_init("UC_2").info(f"Valid name entered: {first_name +' '+ last_name }")
+        else:
+            logger_init("UC_2").info(f"Invalid name entered: {vaild_name}")
     else:
-        logger_init("UC_1").info(f"Invalid name entered")
+        logger_init("UC_2").info(f"Invalid name entered")
 
 if __name__=="__main__":
     main()
