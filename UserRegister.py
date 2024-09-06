@@ -12,7 +12,7 @@ def is_valid_name(name):
     
     """
     Description:
-        Validates if the last name starts with a capital letter and has at least 3 characters.
+        Validates if the  name starts with a capital letter and has at least 3 characters.
     
     parameters:
          first_name: str
@@ -24,48 +24,8 @@ def is_valid_name(name):
         return True
     return False
 
-def is_valid_email(email):
-    """
-    Description:
-        Validates the email which user have entered    
-    
-    parameters:
-         email: str the user entered mail
-    
-    return: 
-        bool
-    """
 
-
-    if re.fullmatch(r"^[\w]+([._@#$%^&*-][\w]+)*@[\w]+\.[a-zA-Z]{2,3}(\.[a-zA-Z]{2,3})?$",email):
-        return True
-    return False
     
-def get_valid_email(phone_number):
-
-    """
-    Description:
-        Prompts the user for a valid mail and allows up to 5 attempts.
-    
-    parameters:
-        mail: str the user entered mail
-    
-    return: 
-        str or None
-    """
-    attempts = 5  
-    
-    while attempts > 0:
-        if is_valid_number(phone_number):
-            print("Valid mail entered!")
-            return phone_number
-        else:
-            attempts -= 1
-            print(f"Invalid mail. You have {attempts} attempt(s) left.")
-            email=input("ENter the mail : ")
-    
-    print("Sorry, you've exceeded the maximum number of attempts.")
-    return None
 
 def get_valid_name(name):
     
@@ -83,12 +43,56 @@ def get_valid_name(name):
     
     while attempts > 0:
         if is_valid_name(name):
-            print("Valid last name entered!")
+            print("Valid  name entered!")
             return name
         else:
             attempts -= 1
-            print(f"Invalid last name. You have {attempts} attempt(s) left.")
+            print(f"Invalid name. You have {attempts} attempt(s) left.")
             name=input("ENter the vaild name: ")
+    
+    print("Sorry, you've exceeded the maximum number of attempts.")
+    return None
+
+
+def is_valid_email(email):
+    """
+    Description:
+        Validates the email which user have entered    
+    
+    parameters:
+         email: str the user entered mail
+    
+    return: 
+        bool
+    """
+
+
+    if re.fullmatch(r"^[\w]+([._@#$%^&*-][\w]+)*@[\w]+\.[a-zA-Z]{2,3}(\.[a-zA-Z]{2,3})?$",email):
+        return True
+    return False
+
+def get_valid_email(email):
+
+    """
+    Description:
+        Prompts the user for a valid mail and allows up to 5 attempts.
+    
+    parameters:
+        mail: str the user entered mail
+    
+    return: 
+        str or None
+    """
+    attempts = 5  
+    
+    while attempts > 0:
+        if is_valid_number(email):
+            print("Valid mail entered!")
+            return email
+        else:
+            attempts -= 1
+            print(f"Invalid mail. You have {attempts} attempt(s) left.")
+            email=input("ENter the mail : ")
     
     print("Sorry, you've exceeded the maximum number of attempts.")
     return None
@@ -129,7 +133,7 @@ def get_valid_number(phone_number):
     
     while attempts > 0:
         if is_valid_number(phone_number):
-            print("Valid last name entered!")
+            print("Valid phone number entered!")
             return phone_number
         else:
             attempts -= 1
@@ -143,10 +147,10 @@ def get_valid_number(phone_number):
 def is_valid_password(passoword):
     """
     Description:
-        Validates the phone_number which user have entered    
+        Validates the password which user have entered    
     
     parameters:
-         phone_number: str the user entered phone_number
+         password: str the user entered password
     
     return: 
         bool
@@ -161,10 +165,10 @@ def get_valid_password(password):
     
     """
     Description:
-        Prompts the user for a phone number and allows up to 5 attempts.
+        Prompts the user for a password and allows up to 5 attempts.
     
     parameters:
-        phone_number: str the user entered phone number
+        password: str the user entered password
     
     return: 
         str or None
@@ -173,7 +177,7 @@ def get_valid_password(password):
     
     while attempts > 0:
         if is_valid_password(password):
-            print("Valid last name entered!")
+            print("Valid password entered!")
             return password
         else:
             attempts -= 1
@@ -211,17 +215,17 @@ def main():
                         logger_init("UC_5").warning(f" Invalid  password entered!")
 
                 else:
-                    logger_init("uc_4").warning(f"Invalid phone number entered:")
+                    logger_init("uc_5").warning(f"Invalid phone number entered:")
 
             else:
-                logger_init("UC_4").warning(f"InValid mail entered:")
+                logger_init("UC_5").warning(f"InValid mail entered:")
 
 
 
         else:
-            logger_init("UC_4").warning(f"Invalid  last name entered:")
+            logger_init("UC_5").warning(f"Invalid  last name entered:")
     else:
-        logger_init("UC_3").warning(f"Invalid first name entered:")
+        logger_init("UC_5").warning(f"Invalid first name entered:")
 
 if __name__=="__main__":
     main()
