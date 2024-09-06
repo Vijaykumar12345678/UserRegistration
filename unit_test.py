@@ -36,7 +36,7 @@ class TestfirstNameValidation(unittest.TestCase):
         self.assertFalse(is_valid_number("12 p61912891"))
 
     def test_valid_password(self):
-        self.assertTrue(is_valid_password("Vijaykum"))
+        self.assertTrue(is_valid_password("Vijayku1"))
         self.assertTrue(is_valid_password("V2345678"))
         self.assertFalse(is_valid_password("vijay kumar"))
         self.assertFalse(is_valid_password("vijay"))
