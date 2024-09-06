@@ -6,7 +6,7 @@
 @Title : python program for to validate the test cases.
 """
 import unittest
-from UserRegister import is_valid_name,is_valid_email,is_valid_number
+from UserRegister import is_valid_name,is_valid_email,is_valid_number,is_valid_password
 
 class TestfirstNameValidation(unittest.TestCase):
 
@@ -35,6 +35,12 @@ class TestfirstNameValidation(unittest.TestCase):
         self.assertFalse(is_valid_number("8861912891"))
         self.assertFalse(is_valid_number("12 p61912891"))
 
+    def test_valid_password(self):
+        self.assertTrue(is_valid_password("vijaykum"))
+        self.assertTrue(is_valid_password("12345678"))
+        self.assertFalse(is_valid_password("vijay kumar"))
+        self.assertFalse(is_valid_password("vijay"))
+
         
     
 def main():
@@ -43,6 +49,7 @@ def main():
     obj.test_valid_last_name()
     obj.test_valid_mail()
     obj.test_valid_number()
+    obj.test_valid_password()
 
 if __name__ == '__main__':
     unittest.main()

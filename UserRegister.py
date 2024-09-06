@@ -139,6 +139,53 @@ def get_valid_number(phone_number):
     print("Sorry, you've exceeded the maximum number of attempts.")
     return None
 
+
+def is_valid_password(passoword):
+    """
+    Description:
+        Validates the phone_number which user have entered    
+    
+    parameters:
+         phone_number: str the user entered phone_number
+    
+    return: 
+        bool
+    """
+
+
+    if re.fullmatch(r"[\w]{8,}",passoword):
+        return True
+    return False
+
+def get_valid_password(password):
+    
+    """
+    Description:
+        Prompts the user for a phone number and allows up to 5 attempts.
+    
+    parameters:
+        phone_number: str the user entered phone number
+    
+    return: 
+        str or None
+    """
+    attempts = 5 
+    
+    while attempts > 0:
+        if is_valid_password(password):
+            print("Valid last name entered!")
+            return password
+        else:
+            attempts -= 1
+            print(f"Invalid password and it should have minimum of 8 letters. You have {attempts} attempt(s) left.")
+            password=input("Enter the password: ")
+    
+    print("Sorry, you've exceeded the maximum number of attempts.")
+    return None
+
+
+
+
 def main():
 
     first_name=input("Enter the first name(Eg:Vij):")
@@ -156,9 +203,15 @@ def main():
                 phone_number=input("Enter the phone number(Eg:91 1234567890): ")
                 vaild_number=get_valid_number(phone_number)
                 if  vaild_number:
-                    logger_init("UC_4").info(f" valid details ")
+                    password=input("Enter the password  eg( vijaykum) : ")
+                    valid_password=get_valid_password(password)
+                    if   valid_password:
+                        logger_init("UC_5").info(f"Valid details entered!")
+                    else:
+                        logger_init("UC_5").warning(f" Invalid  password entered!")
+
                 else:
-                    logger_init("uc_4").warning(f("Invalid phone number entered:"))
+                    logger_init("uc_4").warning(f"Invalid phone number entered:")
 
             else:
                 logger_init("UC_4").warning(f"InValid mail entered:")
