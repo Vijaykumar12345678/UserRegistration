@@ -15,7 +15,7 @@ def is_valid_name(name):
         Validates if the  name starts with a capital letter and has at least 3 characters.
     
     parameters:
-         first_name: str
+        name: str
     
     return: 
         bool
@@ -48,7 +48,7 @@ def get_valid_name(name):
         else:
             attempts -= 1
             print(f"Invalid name. You have {attempts} attempt(s) left.")
-            name=input("ENter the vaild name: ")
+            name=input("Enter the vaild name: ")
     
     print("Sorry, you've exceeded the maximum number of attempts.")
     return None
@@ -92,7 +92,7 @@ def get_valid_email(email):
         else:
             attempts -= 1
             print(f"Invalid mail. You have {attempts} attempt(s) left.")
-            email=input("ENter the mail : ")
+            email=input("Enter the mail : ")
     
     print("Sorry, you've exceeded the maximum number of attempts.")
     return None
@@ -207,7 +207,7 @@ def main():
                 phone_number=input("Enter the phone number(Eg:91 1234567890): ")
                 vaild_number=get_valid_number(phone_number)
                 if  vaild_number:
-                    password=input("Enter the password  eg( vijaykum) : ")
+                    password=input("Enter the password  eg( Vijaykum) : ")
                     valid_password=get_valid_password(password)
                     if   valid_password:
                         logger_init("UC_6").info(f"Valid details entered!")
