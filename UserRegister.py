@@ -92,7 +92,7 @@ def get_valid_email(email):
         else:
             attempts -= 1
             print(f"Invalid mail. You have {attempts} attempt(s) left.")
-            email=input("ENter the mail : ")
+            email=input("Enter the mail : ")
     
     print("Sorry, you've exceeded the maximum number of attempts.")
     return None
