@@ -67,7 +67,7 @@ def is_valid_email(email):
     """
 
 
-    if re.fullmatch(r"^[\w]+([._@#$%^&*-][\w]+)*@[\w]+\.[a-zA-Z]{2,3}(\.[a-zA-Z]{2,3})?$",email):
+    if re.fullmatch(r"^[\w]+([._+#$%^&*-][\w]+)*@[\w]+\.[a-zA-Z]{2,3}(\.[a-zA-Z]{2,3})?$",email):
         return True
     return False
 
