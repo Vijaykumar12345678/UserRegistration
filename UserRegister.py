@@ -92,7 +92,7 @@ def get_valid_email(email):
         else:
             attempts -= 1
             print(f"Invalid mail. You have {attempts} attempt(s) left.")
-            email=input("ENter the mail : ")
+            email=input("Enter the mail : ")
     
     print("Sorry, you've exceeded the maximum number of attempts.")
     return None
@@ -207,7 +207,7 @@ def main():
                 phone_number=input("Enter the phone number(Eg:91 1234567890): ")
                 vaild_number=get_valid_number(phone_number)
                 if  vaild_number:
-                    password=input("Enter the password  eg( vijaykum) : ")
+                    password=input("Enter the password  eg( Vijaykum1) : ")
                     valid_password=get_valid_password(password)
                     if   valid_password:
                         logger_init("UC_7").info(f"Valid details entered!")
