@@ -11,10 +11,10 @@ import re
 def is_valid_name(name):
     """
     Description:
-        Validates if the last name starts with a capital letter and has at least 3 characters.
+        Validates if the name starts with a capital letter and has at least 3 characters.
     
     parameters:
-         first_name: str
+         name: str
     
     return: 
         bool
@@ -26,7 +26,7 @@ def is_valid_name(name):
 def get_valid_name(name):
     """
     Description:
-        Prompts the user for a valid last name and allows up to 5 attempts.
+        Prompts the user for a valid name and allows up to 5 attempts.
     
     parameters:
         name: str the user entered name
@@ -38,12 +38,12 @@ def get_valid_name(name):
     
     while attempts > 0:
         if is_valid_name(name):
-            print("Valid last name entered!")
+            print("Valid name entered!")
             return name
         else:
             attempts -= 1
-            print(f"Invalid last name. You have {attempts} attempt(s) left.")
-            name=input("ENter the vaild name: ")
+            print(f"Invalid  name. You have {attempts} attempt(s) left.")
+            name=input("Enter the vaild name: ")
     
     print("Sorry, you've exceeded the maximum number of attempts.")
     return None
@@ -56,9 +56,9 @@ def main():
         last_name=input("Enter the last name :")
         vaild_name=get_valid_name(last_name)
         if  vaild_name:
-            logger_init("UC_2").info(f"Valid name entered: {first_name +' '+ last_name }")
+            logger_init("UC_2").info(f"Valid name entered for first name and last name.")
         else:
-            logger_init("UC_2").info(f"Invalid name entered: {vaild_name}")
+            logger_init("UC_2").info(f"Invalid name entered")
     else:
         logger_init("UC_2").info(f"Invalid name entered")
 
