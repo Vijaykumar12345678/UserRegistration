@@ -8,25 +8,25 @@
 from MyLogging import logger_init
 import re
 
-def is_valid_first_name(first_name):
+def is_valid_name(name):
     """
     Description:
-        Validates if the last name starts with a capital letter and has at least 3 characters.
+        Validates if the  name starts with a capital letter and has at least 3 characters.
     
     parameters:
-         first_name: str
+        name: str
     
     return: 
         bool
     """
-    if re.match(r'^[A-Z][a-zA-Z]{2,}$', first_name):
+    if re.match(r'^[A-Z][a-zA-Z]{2,}$', name):
         return True
     return False
 
 def get_valid_first_name(name):
     """
     Description:
-        Prompts the user for a valid last name and allows up to 5 attempts.
+        Prompts the user for a valid name and allows up to 5 attempts.
     
     parameters:
         name: str the user entered name
@@ -37,12 +37,12 @@ def get_valid_first_name(name):
     attempts = 5  
     
     while attempts > 0:
-        if is_valid_first_name(name):
+        if is_valid_name(name):
             print("Valid last name entered!")
             return name
         else:
             attempts -= 1
-            print(f"Invalid last name. You have {attempts} attempt(s) left.")
+            print(f"Invalid name. You have {attempts} attempt(s) left.")
             name=input("ENter the vaild name: ")
     
     print("Sorry, you've exceeded the maximum number of attempts.")
