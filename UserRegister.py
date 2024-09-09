@@ -210,22 +210,22 @@ def main():
                     password=input("Enter the password  eg( Vijay@123) : ")
                     valid_password=get_valid_password(password)
                     if   valid_password:
-                        logger_init("UC_8").info(f"Valid details entered!")
+                        logger_init("UC_9").info(f"Valid details entered!")
                     else:
-                        logger_init("UC_8").warning(f" Invalid  password entered!")
+                        logger_init("UC_9").warning(f" Invalid  password entered!")
 
                 else:
-                    logger_init("uc_8").warning(f"Invalid phone number entered:")
+                    logger_init("uc_9").warning(f"Invalid phone number entered:")
 
             else:
-                logger_init("UC_8").warning(f"InValid mail entered:")
+                logger_init("UC_9").warning(f"InValid mail entered:")
 
 
 
         else:
-            logger_init("UC_8").warning(f"Invalid  last name entered:")
+            logger_init("UC_9").warning(f"Invalid  last name entered:")
     else:
-        logger_init("UC_8").warning(f"Invalid first name entered:")
+        logger_init("UC_9").warning(f"Invalid first name entered:")
 
 if __name__=="__main__":
     main()
