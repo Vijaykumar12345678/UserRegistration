@@ -12,10 +12,10 @@ def is_valid_name(name):
     
     """
     Description:
-        Validates if the last name starts with a capital letter and has at least 3 characters.
+        Validates if the name starts with a capital letter and has at least 3 characters.
     
     parameters:
-         first_name: str
+        name: str
     
     return: 
         bool
@@ -40,12 +40,12 @@ def get_valid_name(name):
     
     while attempts > 0:
         if is_valid_name(name):
-            print("Valid last name entered!")
+            print("Valid name entered!")
             return name
         else:
             attempts -= 1
-            print(f"Invalid last name. You have {attempts} attempt(s) left.")
-            name=input("ENter the vaild name: ")
+            print(f"Invalid name. You have {attempts} attempt(s) left.")
+            name=input("Enter the vaild name: ")
     
     print("Sorry, you've exceeded the maximum number of attempts.")
     return None
@@ -73,7 +73,7 @@ def get_valid_email(email):
         Prompts the user for a valid mail and allows up to 5 attempts.
     
     parameters:
-        mail: str the user entered mail
+        email: str the user entered mail
     
     return: 
         str or None
@@ -87,7 +87,7 @@ def get_valid_email(email):
         else:
             attempts -= 1
             print(f"Invalid mail. You have {attempts} attempt(s) left.")
-            email=input("ENter the mail : ")
+            email=input("Enter the mail : ")
     
     print("Sorry, you've exceeded the maximum number of attempts.")
     return None
