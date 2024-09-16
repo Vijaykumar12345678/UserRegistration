@@ -158,7 +158,7 @@ def main():
                 if  vaild_number:
                     logger_init("UC_4").info(f" valid details ")
                 else:
-                    logger_init("uc_4").warning(f("Invalid phone number entered:"))
+                    logger_init("uc_4").warning(f"Invalid phone number entered:")
 
             else:
                 logger_init("UC_4").warning(f"InValid mail entered:")
